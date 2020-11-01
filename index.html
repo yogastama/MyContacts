@@ -10,6 +10,7 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" href="/img/icons/icon96.png">
     <meta name="apple-mobile-web-app-status-bar" content="9e2123">
+    <meta name="theme-color" content="#ee6f72">
     <title>My Contact</title>
 </head>
 
@@ -40,7 +41,7 @@
     </div>
 
 
-    <!-- Modal Structure -->
+    <!-- Modal Add Structure -->
     <div id="add_contact_modal" class="modal add-contact">
         <div class="modal-content">
             <h4>New Contact</h4>
@@ -53,7 +54,7 @@
         </div>
 
     </div>
-    <!-- Modal Structure -->
+    <!-- Modal Edit Structure -->
     <div id="edit_contact_modal" class="modal edit-contact">
         <div class="modal-content">
             <h4>Edit Contact</h4>
@@ -67,12 +68,35 @@
 
     </div>
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red">
+        <a class="btn-floating btn-large red modal-trigger" href="#add_contact_modal">
             <i class="large material-icons">mode_edit</i>
         </a>
 
     </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAEXJXuHWxQ8X2gwuloq9zPN-0EJJ4cFls",
+            authDomain: "contact-fb02f.firebaseapp.com",
+            databaseURL: "https://contact-fb02f.firebaseio.com",
+            projectId: "contact-fb02f",
+            storageBucket: "contact-fb02f.appspot.com",
+            messagingSenderId: "195010353080",
+            appId: "1:195010353080:web:c8a9be65ae73f9861a214d"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
     <script src="/js/app.js"></script>
+    <script src="/js/db.js"></script>
     <script src="/js/ui.js"></script>
 </body>
 
